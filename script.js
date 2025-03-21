@@ -1,0 +1,71 @@
+// Sample array of books
+const books = [
+    {
+            title: "The Great Gatsby",
+                    author: "F. Scott Fitzgerald",
+                            year: 1925,
+                                    genre: "Fiction",
+                                            image: "https://via.placeholder.com/100"
+                                                },
+                                                    {
+                                                            title: "To Kill a Mockingbird",
+                                                                    author: "Harper Lee",
+                                                                            year: 1960,
+                                                                                    genre: "Classic",
+                                                                                            image: "https://via.placeholder.com/100"
+                                                                                                },
+                                                                                                    {
+                                                                                                            title: "1984",
+                                                                                                                    author: "George Orwell",
+                                                                                                                            year: 1949,
+                                                                                                                                    genre: "Dystopian",
+                                                                                                                                            image: "https://via.placeholder.com/100"
+                                                                                                                                                }
+                                                                                                                                                ];
+
+                                                                                                                                                // Function to populate table with books
+                                                                                                                                                function populateTable() {
+                                                                                                                                                    const table = document.getElementById("bookTable");
+
+                                                                                                                                                        books.forEach(book => {
+                                                                                                                                                                let row = table.insertRow();
+                                                                                                                                                                        row.innerHTML = `
+                                                                                                                                                                                    <td>${book.title}</td>
+                                                                                                                                                                                                <td>${book.author}</td>
+                                                                                                                                                                                                            <td>${book.year}</td>
+                                                                                                                                                                                                                        <td>${book.genre}</td>
+                                                                                                                                                                                                                                `;
+                                                                                                                                                                                                                                    });
+                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                    // Function to display books as cards
+                                                                                                                                                                                                                                    function displayBooksAsCards() {
+                                                                                                                                                                                                                                        const bookCards = document.getElementById("bookCards");
+
+                                                                                                                                                                                                                                            books.forEach(book => {
+                                                                                                                                                                                                                                                    let card = document.createElement("div");
+                                                                                                                                                                                                                                                            card.classList.add("book-card");
+
+                                                                                                                                                                                                                                                                    card.innerHTML = `
+                                                                                                                                                                                                                                                                                <img src="${book.image}" alt="${book.title}">
+                                                                                                                                                                                                                                                                                            <div class="book-info">
+                                                                                                                                                                                                                                                                                                            <h2>${book.title}</h2>
+                                                                                                                                                                                                                                                                                                                            <p><strong>Author:</strong> ${book.author}</p>
+                                                                                                                                                                                                                                                                                                                                            <p><strong>Year:</strong> ${book.year}</p>
+                                                                                                                                                                                                                                                                                                                                                            <p><strong>Genre:</strong> ${book.genre}</p>
+                                                                                                                                                                                                                                                                                                                                                                            <button class="button" onclick="showMoreInfo('${book.title}')">More Info</button>
+                                                                                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                                                                                                `;
+
+                                                                                                                                                                                                                                                                                                                                                                                                        bookCards.appendChild(card);
+                                                                                                                                                                                                                                                                                                                                                                                                            });
+                                                                                                                                                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                                                                                                                                                            // Function to handle "More Info" button click
+                                                                                                                                                                                                                                                                                                                                                                                                            function showMoreInfo(title) {
+                                                                                                                                                                                                                                                                                                                                                                                                                alert(`More information about "${title}" will be available soon!`);
+                                                                                                                                                                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                // Initialize functions when page loads
+                                                                                                                                                                                                                                                                                                                                                                                                                document.addEventListener("DOMContentLoaded
+                                                                                                                                                                                                                                                                                                                                                                                                                
